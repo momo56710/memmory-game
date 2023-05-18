@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   var firstChoice, secondChoice, block1, block2;
-  const cards = ["😺", "🐶", "💀", "🐱‍👤", "😁", "🐱‍🐉", "🐱‍🏍", "🐱‍🚀"];
+  const cards = ["😺", "🐶", "💀", "🐱‍👤", "😁", "🐱‍🐉", "🐱‍🏍", "🐱‍🚀",'😎','👍','🌹','🎂'];
   const choices = [...cards, ...cards];
   const checkanswer = () => {
     if (firstChoice === secondChoice){}
