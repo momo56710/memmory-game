@@ -1,6 +1,5 @@
 .grid {
   display: grid;
-  height: 100vh;
   place-items: center;
   grid-template-columns: repeat(6, 100px);
   gap: 1em;
