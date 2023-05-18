@@ -1,16 +1,21 @@
-.grid{
+.grid {
   display: grid;
-  grid-template-columns: repeat(4,100px);
+  grid-template-columns: repeat(4, 100px);
   gap: 1em;
   width: fit-content;
   margin: auto;
 }
-.card{
-   width: 100px;
-   aspect-ratio: 1;
-   display: grid;
-   place-items: center;
-   background-color: rgb(96, 168, 168);
-   border-radius: 20px;
-   cursor: pointer;
+.card {
+  width: 100px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background-color: rgb(96, 168, 168);
+  border-radius: 20px;
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 100px);
+  }
 }
