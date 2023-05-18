@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 
 function App() {
-  var firstChoice, secondChoice, block1, block2;
+  const winner = useRef();
+  const again = useRef();
+  var firstChoice, secondChoice, block1, block2, count;
+  count = 0;
   const cards = [
     "😺",
     "🐶",
@@ -15,13 +18,21 @@ function App() {
     "😎",
   ];
   const choices = [...cards, ...cards];
+  const handleWinning = () => {
+    if (count === 9) {
+      winner.current.innerHTML = `wp! <br> refresh to restart`;
+      
+    }
+  };
   const checkanswer = () => {
     if (firstChoice === secondChoice) {
+      count ++
     } else {
       block1.target.innerHTML = "";
       block2.target.innerHTML = "";
     }
     firstChoice = secondChoice = "";
+    handleWinning();
   };
   const handleClick = (e, element) => {
     if (!secondChoice) {
@@ -67,6 +78,7 @@ function App() {
               );
             })}
         </div>
+        <div ref={winner} style={{textAlign : "center"}}></div>
       </div>
     </>
   );
